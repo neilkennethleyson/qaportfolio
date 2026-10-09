@@ -382,11 +382,149 @@
       .info-panel { padding: 13px; }
       footer { margin-top: 14px; }
     }
+
+/* Mobile collapsible sidebar */
+.sidebar-toggle {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    padding: 14px 8px;
+    gap: 22px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 100;
+    transition: width 0.2s ease;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    width: 42px;
+    height: 38px;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--panel);
+    color: var(--cyan);
+    font-size: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .brand {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .brand-mark {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    font-size: 11px;
+  }
+
+  .brand-name,
+  .brand-sub,
+  .nav-label,
+  .sidebar-bottom,
+  .sidebar:not(.expanded) nav a .nav-text {
+    display: none;
+  }
+
+  nav {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 17px;
+  }
+
+  .sidebar.expanded {
+    width: 220px;
+    padding: 14px 12px;
+    box-shadow: 8px 0 24px #0005;
+  }
+
+  .layout:has(.sidebar.expanded) {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .sidebar.expanded .brand {
+    justify-content: flex-start;
+    padding: 0 4px;
+  }
+
+  .sidebar.expanded .brand-name,
+  .sidebar.expanded .brand-sub,
+  .sidebar.expanded .nav-label,
+  .sidebar.expanded .sidebar-bottom {
+    display: block;
+  }
+
+  .sidebar.expanded nav a {
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 10px 9px;
+    font-size: 12px;
+  }
+
+  main {
+    min-width: 0;
+    padding: 14px 10px;
+  }
+
+  .hero {
+    padding: 16px;
+  }
+
+  .hero h1 {
+    font-size: 23px;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    
   </style>
 </head>
 <body>
   <div class="layout">
-    <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
+      <button
+  class="sidebar-toggle"
+  id="sidebarToggle"
+  aria-label="Expand navigation"
+  aria-expanded="false"
+  aria-controls="sidebar"
+>
+  ☰
+</button>
       <a class="brand" href="#overview" aria-label="Portfolio overview">
         <div class="brand-mark">NKL</div>
         <div>
@@ -558,5 +696,34 @@
       </footer>
     </main>
   </div>
+
+
+
+<script>
+  const sidebar = document.getElementById("sidebar");
+  const toggle = document.getElementById("sidebarToggle");
+
+  toggle.addEventListener("click", () => {
+    const expanded = sidebar.classList.toggle("expanded");
+
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.setAttribute(
+      "aria-label",
+      expanded ? "Collapse navigation" : "Expand navigation"
+    );
+    toggle.textContent = expanded ? "✕" : "☰";
+  });
+
+  sidebar.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 720) {
+        sidebar.classList.remove("expanded");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Expand navigation");
+        toggle.textContent = "☰";
+      }
+    });
+  });
+</script>
 </body>
 </html>
