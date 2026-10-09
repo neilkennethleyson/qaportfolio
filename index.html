@@ -1481,33 +1481,47 @@ border-top: 1px solid var(--border);
   const toggle = document.getElementById("sidebarToggle");
   const mobileToggle = document.getElementById("mobileMenuToggle");
 
+  function setSidebarExpanded(expanded) {
+    sidebar.classList.toggle("expanded", expanded);
 
-function setSidebarExpanded(expanded) {
-  sidebar.classList.toggle("expanded", expanded);
+    // Collapse dropdowns whenever the sidebar opens or closes
+    viewWorkToggle.setAttribute("aria-expanded", "false");
+    viewWorkSubmenu.hidden = true;
 
-  // Always keep both dropdowns collapsed when opening or closing
-  viewWorkToggle.setAttribute("aria-expanded", "false");
-  viewWorkSubmenu.hidden = true;
+    certificatesToggle.setAttribute("aria-expanded", "false");
+    certificatesSubmenu.hidden = true;
 
-  certificatesToggle.setAttribute("aria-expanded", "false");
-  certificatesSubmenu.hidden = true;
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.setAttribute(
+      "aria-label",
+      expanded ? "Collapse navigation" : "Expand navigation"
+    );
+    toggle.textContent = expanded ? "✕" : "☰";
 
-  toggle.setAttribute("aria-expanded", String(expanded));
-  toggle.setAttribute(
-    "aria-label",
-    expanded ? "Collapse navigation" : "Expand navigation"
-  );
-  toggle.textContent = expanded ? "✕" : "☰";
+    mobileToggle.setAttribute("aria-expanded", String(expanded));
+    mobileToggle.setAttribute(
+      "aria-label",
+      expanded ? "Close navigation" : "Open navigation"
+    );
+    mobileToggle.textContent = expanded ? "✕" : "☰";
+  }
 
-  mobileToggle.setAttribute("aria-expanded", String(expanded));
-  mobileToggle.setAttribute(
-    "aria-label",
-    expanded ? "Close navigation" : "Open navigation"
-  );
-  mobileToggle.textContent = expanded ? "✕" : "☰";
-}
+  // Desktop sidebar toggle
+  toggle.addEventListener("click", () => {
+    setSidebarExpanded(!sidebar.classList.contains("expanded"));
+  });
 
+  // Floating mobile menu toggle
+  mobileToggle.addEventListener("click", () => {
+    setSidebarExpanded(!sidebar.classList.contains("expanded"));
+  });
 
+  // Close the mobile sidebar after selecting a navigation link
+  sidebar.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 720) {
+        setSidebarExpanded(false);
+      }
     });
   });
 </script>
