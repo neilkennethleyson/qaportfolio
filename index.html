@@ -778,6 +778,51 @@ transition: left 0.2s ease;
     left: 166px;
   }
 }
+
+
+/* Keep the portfolio within the mobile screen */
+@media (max-width: 720px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .layout {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  main * {
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  main img,
+  main video,
+  main iframe,
+  main canvas {
+    max-width: 100%;
+  }
+
+  main table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
     
   </style>
 
