@@ -1,1408 +1,562 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Neil Kenneth Leyson | Software Quality Engineer</title>
-    
-
-    <meta
-        name="description"
-        content="Professional portfolio of Neil Kenneth Leyson — Software Quality Engineer with experience in QA, UAT, Product Management, automation, and AI-assisted workflows."
-    >
-
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0f19;
-            color: #e5e7eb;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1100px, 90%);
-            margin: auto;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(11, 15, 25, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #1f2937;
-        }
-
-        .nav-container {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            
-        }
-
-        nav .container {
-    width: 100%;
-                padding-left: 40px;
-    padding-right: 40px;
-}
-
-        .logo {
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.logo img {
-    height: 40px;
-    width: auto;
-    display: block;
-}
-
-        .logo span {
-            color: #60a5fa;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #9ca3af;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #60a5fa;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: left;
-            padding-top: 20px;
-            background-image:
-        linear-gradient(
-            rgba(11, 15, 25, 0.35),
-            rgba(11, 15, 25, 0.55)
-        ),
-        url("assets/images/profilephoto.jpg");
-
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-        .hero-content {
-               max-width: 800px;
-    margin-left: 0;
-    margin-right: auto;
-    text-align: left;
-              padding-left: 40px;
-}
-
-        .status {
-            display: inline-block;
-            border: 1px solid #374151;
-            padding: 7px 13px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            color: #9ca3af;
-            margin-bottom: 25px;
-        }
-
-        .status::before {
-            content: "●";
-            color: #22c55e;
-            margin-right: 7px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            line-height: 0.95;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #60a5fa;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: #9ca3af;
-            margin-bottom: 30px;
-            max-width: 700px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            padding: 12px 20px;
-            border-radius: 8px;
-            border: 1px solid #374151;
-            transition: 0.2s;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .button-primary {
-            background: #2563eb;
-            border-color: #2563eb;
-            color: white;
-        }
-
-        .button-primary:hover {
-            background: #3b82f6;
-        }
-
-        .button-secondary:hover {
-            border-color: #60a5fa;
-            color: #60a5fa;
-        }
-
-        /* GENERAL SECTIONS */
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-label {
-            color: #60a5fa;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-size: 2.3rem;
-            margin-bottom: 20px;
-        }
-
-        .section-description {
-            color: #9ca3af;
-            max-width: 700px;
-            margin-bottom: 45px;
-        }
-
-        /* STATS */
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border-top: 1px solid #1f2937;
-            border-bottom: 1px solid #1f2937;
-        }
-
-        .stat {
-            padding: 35px 20px;
-            border-right: 1px solid #1f2937;
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #60a5fa;
-        }
-
-        .stat-label {
-            color: #9ca3af;
-            font-size: 0.85rem;
-        }
-
-        /* ABOUT */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-text p {
-            color: #9ca3af;
-            margin-bottom: 18px;
-        }
-
-        .highlight-box {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            padding: 30px;
-        }
-
-        .highlight-box h3 {
-            margin-bottom: 15px;
-        }
-
-        .highlight-box ul {
-            list-style: none;
-        }
-
-        .highlight-box li {
-            padding: 10px 0;
-            border-bottom: 1px solid #1f2937;
-            color: #9ca3af;
-        }
-
-        .highlight-box li:last-child {
-            border-bottom: none;
-        }
-
-        .highlight-box li::before {
-            content: "→";
-            color: #60a5fa;
-            margin-right: 10px;
-        }
-
-        #about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
-        /* SKILLS */
-
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            padding: 28px;
-            border-radius: 12px;
-            transition: 0.2s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-            border-color: #374151;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 12px;
-        }
-
-        .skill-card p {
-            color: #9ca3af;
-            font-size: 0.95rem;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            border: 1px solid #374151;
-            padding: 5px 9px;
-            border-radius: 5px;
-            margin: 4px 3px 0 0;
-            font-size: 0.75rem;
-            color: #d1d5db;
-        }
-
-        /* PROJECTS */
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .project-card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            padding: 28px;
-            min-height: 230px;
-            display: flex;
-            flex-direction: column;
-        }
-.project-card > a {
-    margin-top: auto !important;
-}
-        .project-number {
-            color: #60a5fa;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-        }
-
-        .project-card h3 {
-            margin-bottom: 10px;
-             font-size: 1.2rem;
-        }
-
-        .project-card p {
-            color: #9ca3af;
-            font-size: 0.9rem;
-            flex-grow: 1;
-        }
-
-        .project-type {
-            margin-top: 20px;
-            color: #6b7280;
-            font-size: 0.75rem;
-        }
-
-        /* EXPERIENCE */
-
-        .timeline {
-            border-left: 1px solid #374151;
-            margin-left: 10px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 0 0 45px 35px;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -6px;
-            top: 5px;
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: #60a5fa;
-        }
-
-        .timeline-date {
-            color: #60a5fa;
-            font-size: 0.8rem;
-            margin-bottom: 5px;
-        }
-
-        .timeline-item h3 {
-            margin-bottom: 3px;
-        }
-
-        .timeline-company {
-            color: #9ca3af;
-            margin-bottom: 8px;
-        }
-
-        .timeline-description {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        /* EDUCATION */
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .education-card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            padding: 28px;
-        }
-
-        .education-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .education-card p {
-            color: #9ca3af;
-        }
-
-        /* CERTIFICATIONS */
-
-        .cert-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .cert {
-            padding: 18px;
-            border: 1px solid #1f2937;
-            border-radius: 8px;
-            background: #111827;
-            color: #d1d5db;
-        }
-        
-    #contact {
-    scroll-margin-top: 120px;
-}
-        /* CONTACT */
-
-        .contact-box {
-            text-align: center;
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 15px;
-            padding: 60px 30px 120px;
-        }
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 20px;
-}
-.contact-icons a img[alt="LinkedIn"] {
-    width: 56px;
-    height: 56px;
-}
-.contact-icons a {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
-}
-
-.contact-icons img {
-  width: 38px;
-    height: 38px;
-    object-fit: contain;
-}
-
-.contact-icons a:hover {
-    transform: translateY(-3px);
-}
-        .contact-box h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-box p {
-            color: #9ca3af;
-            margin-bottom: 25px;
-        }
-
-        .email {
-            display: inline-block;
-            color: #60a5fa;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #1f2937;
-            padding: 30px 0;
-            color: #6b7280;
-            font-size: 0.8rem;
-        }
-
-        .footer-container {
-               display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
-    margin: 0;
-                padding-left: 40px;
-    padding-right: 40px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-.hero {
-    background-position: right center;
-}
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .stat:nth-child(2) {
-                border-right: none;
-            }
-
-            .about-grid,
-            .skill-grid,
-            .education-grid,
-            .cert-list {
-                grid-template-columns: 1fr;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                flex-direction: column;
-            }
-        }
- .project-card h3 {
-    margin-top: 0;
-}       
-.project-card h3 a {
-    transition: 0.2s;
-}
-
-.project-card h3 a:hover {
-    color: #60a5fa;
-}
- 
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QA portfolio showcasing software testing, UAT, Playwright automation, defect investigation, release quality, and AI-assisted QA workflows.">
+  <title>QA Portfolio Dashboard | Neil Kenneth Leyson</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --sidebar: #101b2d;
+      --panel: #121f32;
+      --panel-hover: #172941;
+      --border: #24364d;
+      --text: #edf5ff;
+      --muted: #91a4bd;
+      --cyan: #38bdf8;
+      --green: #34d399;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 235px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background: var(--sidebar);
+      border-right: 1px solid var(--border);
+      padding: 28px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 8px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--cyan);
+      color: #071321;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .brand-name { font-weight: 800; font-size: 14px; }
+    .brand-sub { color: var(--muted); font-size: 10px; letter-spacing: 1.6px; margin-top: 4px; }
+
+    .nav-label {
+      color: #657b96;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      padding: 0 10px;
+      margin-bottom: 10px;
+    }
+
+    nav { display: grid; gap: 6px; }
+
+    nav a {
+      padding: 11px 12px;
+      border-radius: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    nav a:hover, nav a.active {
+      background: #18334b;
+      color: var(--cyan);
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      padding: 16px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #0d1727;
+    }
+
+    .available {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px #34d39977;
+    }
+
+    .sidebar-bottom p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    main { padding: 30px 34px; min-width: 0; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .breadcrumb { color: var(--muted); font-size: 12px; }
+    .breadcrumb strong { color: var(--text); }
+
+    .top-link {
+      color: var(--cyan);
+      border: 1px solid #28506a;
+      padding: 9px 13px;
+      border-radius: 9px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background:
+        radial-gradient(ellipse at 90% 10%, #0e749044, transparent 35%),
+        linear-gradient(120deg, #14253b, #101b2d 70%);
+      padding: 30px;
+      margin-bottom: 22px;
+    }
+
+    .hero::after {
+      content: "QA";
+      position: absolute;
+      right: 35px;
+      top: 4px;
+      font-size: clamp(100px, 15vw, 190px);
+      line-height: 1;
+      font-weight: 900;
+      color: #38bdf808;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(26px, 3vw, 39px);
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin: 12px 0 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 17px;
+      font-weight: 500;
+      color: #c5d6e9;
+      margin: 0 0 12px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      max-width: 620px;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .button-primary { background: var(--cyan); color: #071321; }
+    .button-secondary { border: 1px solid var(--border); color: var(--text); }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      margin: 24px 0 14px;
+    }
+
+    .section-heading h2 { font-size: 16px; margin: 0; }
+    .section-heading p { font-size: 11px; color: var(--muted); margin: 5px 0 0; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 17px;
+      min-width: 0;
+    }
+
+    .metric-value {
+      font-size: 25px;
+      font-weight: 850;
+      letter-spacing: -1px;
+    }
+
+    .metric-label { color: var(--muted); font-size: 11px; margin-top: 7px; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .project {
+      display: block;
+      min-width: 0;
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--panel);
+      transition: transform .2s, background .2s, border-color .2s;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      background: var(--panel-hover);
+      border-color: #34789b;
+    }
+
+    .project-icon {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #12314a;
+      color: var(--cyan);
+      font-size: 17px;
+      margin-bottom: 13px;
+    }
+
+    .project h3 { font-size: 13px; margin: 0 0 7px; }
+    .project p { font-size: 11px; color: var(--muted); line-height: 1.65; margin: 0 0 13px; }
+
+    .project-tag {
+      display: inline-block;
+      color: var(--cyan);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 13px;
+      margin-top: 14px;
+    }
+
+    .info-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .info-panel h3 { font-size: 13px; margin: 0 0 10px; }
+    .info-panel p { color: var(--muted); font-size: 11px; line-height: 1.8; margin: 0; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    .skill {
+      font-size: 10px;
+      color: #c7d7e9;
+      background: #1a2b40;
+      border: 1px solid #2a3c52;
+      padding: 6px 9px;
+      border-radius: 6px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #6f849e;
+      font-size: 10px;
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (min-width: 1500px) {
+      main { max-width: 1600px; width: 100%; margin: 0 auto; }
+    }
+
+    @media (max-width: 1050px) {
+      main { padding: 24px; }
+      .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { padding: 15px; gap: 16px; }
+      .sidebar-bottom { display: none; }
+      nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-label { margin-bottom: 7px; }
+      main { padding: 18px 14px; }
+      .hero { padding: 22px; }
+      .projects, .bottom-grid { grid-template-columns: 1fr; }
+      .topbar { align-items: flex-start; }
+      footer { flex-direction: column; }
+    }
+
+    @media (max-height: 850px) and (min-width: 721px) {
+      main { padding-top: 20px; padding-bottom: 16px; }
+      .hero { padding: 22px 26px; margin-bottom: 15px; }
+      .hero h1 { font-size: 29px; margin: 8px 0 6px; }
+      .hero p { line-height: 1.55; }
+      .hero-actions { margin-top: 13px; }
+      .section-heading { margin: 16px 0 10px; }
+      .metric { padding: 13px; }
+      .metric-value { font-size: 22px; }
+      .project { padding: 13px; }
+      .project-icon { width: 30px; height: 30px; margin-bottom: 9px; }
+      .project p { margin-bottom: 8px; }
+      .info-panel { padding: 13px; }
+      footer { margin-top: 14px; }
+    }
+  </style>
 </head>
-
 <body>
-
-    <!-- NAVIGATION -->
-
-    <nav>
-        <div class="container nav-container">
-
-          <a href="#home" class="logo">
-    <img src="assets/images/NKL%20Logo.jpg" alt="Neil Kenneth Leyson">
-</a>
-
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Portfolio overview">
+        <div class="brand-mark">NKL</div>
+        <div>
+          <div class="brand-name">QA PORTFOLIO</div>
+          <div class="brand-sub">QUALITY ENGINEERING</div>
         </div>
-    </nav>
+      </a>
 
+      <div>
+        <div class="nav-label">WORKSPACE</div>
+        <nav aria-label="Portfolio navigation">
+          <a class="active" href="#overview">◈ &nbsp; Overview</a>
+          <a href="#projects">▦ &nbsp; Test Design</a>
+          <a href="#projects">◉ &nbsp; Defect Investigation</a>
+          <a href="#projects">☑ &nbsp; UAT</a>
+          <a href="#projects">⌘ &nbsp; Automation</a>
+          <a href="#projects">✧ &nbsp; AI QA Assistant</a>
+          <a href="#quality">▤ &nbsp; Release Quality</a>
+        </nav>
+      </div>
 
-    <!-- HERO -->
+      <div>
+        <div class="nav-label">PROFILE</div>
+        <nav aria-label="Profile links">
+          <a href="#about">▧ &nbsp; About Me</a>
+          <a href="#skills">◇ &nbsp; Skills & Tools</a>
+          <a href="#contact">↗ &nbsp; Contact</a>
+        </nav>
+      </div>
 
-    <header id="home" class="hero">
+      <div class="sidebar-bottom">
+        <div class="available"><span class="dot"></span> OPEN TO OPPORTUNITIES</div>
+        <p>QA · UAT · Automation · AI-assisted workflows</p>
+      </div>
+    </aside>
 
-        <div class="container hero-content">
+    <main id="overview">
+      <header class="topbar">
+        <div class="breadcrumb">Portfolio / <strong>Overview</strong></div>
+        <a class="top-link" href="https://www.linkedin.com/in/neil-kenneth-leyson-53a48a3b7/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </header>
 
-            <div class="status">
-                Open to New Opportunities
-            </div>
-
-            <p class="section-label">
-                Software Quality Engineer | QA • UAT • Automation • AI • Product Management
-            </p>
-
-            <h1>
-                Quality meets <span>technology.</span>
-            </h1>
-
-            <p class="hero-subtitle">
-                I'm <strong>Neil Kenneth Leyson</strong> — a software quality professional
-                with experience across QA, UAT, Product Management,
-                Automation, and AI-assisted workflows.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="button button-primary">
-                    View My Work
-                </a>
-
-<a href="assets/Neil-Kenneth-Leyson-Resume.pdf?v=2" target="_blank" class="button button-secondary">
-    View Resume
-</a>
-                
-                <a href="#contact" class="button button-secondary">
-                    Contact Me
-                </a>
-
- 
-            </div>
-
+      <section class="hero">
+        <div class="eyebrow">SOFTWARE QUALITY ENGINEER</div>
+        <h1>Quality meets technology.</h1>
+        <h2>Testing with a product mindset.</h2>
+        <p>
+          I help teams deliver reliable software through thoughtful test design,
+          risk-based validation, automation, and AI-assisted QA workflows.
+          My background spans quality engineering, UAT, product operations,
+          and continuous process improvement.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore My Work ↓</a>
+          <a class="button button-secondary" href="https://neilkennethleyson.github.io/">Visit Full Portfolio ↗</a>
         </div>
+      </section>
 
-    </header>
+      <section aria-label="Career highlights">
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-value">13+</div>
+            <div class="metric-label">Years of professional experience</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">5+</div>
+            <div class="metric-label">Years across QA, UAT & product roles</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">278</div>
+            <div class="metric-label">Playwright automated tests developed and maintained</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">AI + QA</div>
+            <div class="metric-label">AI-assisted workflow proof of concept</div>
+          </div>
+        </div>
+      </section>
 
-
-    <!-- STATS -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="stats">
-
-                <div class="stat">
-                    <div class="stat-number">13+</div>
-                    <div class="stat-label">
-                        Years Professional Experience
-                    </div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-number">11+</div>
-                    <div class="stat-label">
-                        Years with One Company
-                    </div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">
-                        Years in QA / UAT / Product
-                    </div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-number">AI</div>
-                    <div class="stat-label">
-                        Automation & AI Workflows
-                    </div>
-                </div>
-
-            </div>
-
+      <section id="projects">
+        <div class="section-heading">
+          <div>
+            <h2>Featured Projects</h2>
+            <p>Selected work across quality engineering and product validation</p>
+          </div>
+          <span class="eyebrow">01 — 06</span>
         </div>
 
-    </section>
+        <div class="projects">
+          <a class="project" href="https://neilkennethleyson.github.io/qa-test-design.html">
+            <div class="project-icon">▦</div>
+            <h3>QA Test Design</h3>
+            <p>Structured test scenarios, coverage analysis, and risk-based validation.</p>
+            <span class="project-tag">TEST STRATEGY ↗</span>
+          </a>
 
+          <a class="project" href="https://neilkennethleyson.github.io/defect-investigation.html">
+            <div class="project-icon">⌕</div>
+            <h3>Defect Investigation</h3>
+            <p>Reproducible defect reports, evidence gathering, and root-cause collaboration.</p>
+            <span class="project-tag">DEFECT ANALYSIS ↗</span>
+          </a>
 
-    <!-- ABOUT -->
+          <a class="project" href="https://neilkennethleyson.github.io/uat-user-journey.html">
+            <div class="project-icon">☑</div>
+            <h3>UAT User Journey</h3>
+            <p>End-to-end business workflows designed around real user needs.</p>
+            <span class="project-tag">USER ACCEPTANCE ↗</span>
+          </a>
 
-    <section id="about">
+          <a class="project" href="https://neilkennethleyson.github.io/playwright-automation.html">
+            <div class="project-icon">⌘</div>
+            <h3>Playwright Automation</h3>
+            <p>UI and end-to-end automation for identified critical application flows.</p>
+            <span class="project-tag">TEST AUTOMATION ↗</span>
+          </a>
 
-        <div class="container">
+          <a class="project" href="https://neilkennethleyson.github.io/ai-qa-assistant.html">
+            <div class="project-icon">✧</div>
+            <h3>AI QA Assistant</h3>
+            <p>A proof of concept for AI-assisted story review and test management.</p>
+            <span class="project-tag">AI-ASSISTED QA ↗</span>
+          </a>
 
- 
+          <a class="project" href="https://neilkennethleyson.github.io/release-quality-report.html">
+            <div class="project-icon">▤</div>
+            <h3>Release Quality Report</h3>
+            <p>Release validation, risk visibility, and concise quality reporting.</p>
+            <span class="project-tag">RELEASE QUALITY ↗</span>
+          </a>
+        </div>
+      </section>
 
-<div class="about-grid">
-
-               <div class="about-text">
-
-    <h2 class="section-title">
-        A quality professional with a product mindset.
-    </h2>
-
-    <p>
-                        My career has evolved across customer service,
-                        quality evaluation, user acceptance testing,
-                        product management, and software quality engineering.
-                    </p>
-
-                    <p>
-                        This combination gives me a broader perspective
-                        when evaluating software. I don't only look at
-                        whether something works — I also consider the
-                        user experience, business requirements,
-                        acceptance criteria, and overall product quality.
-                    </p>
-
-                    <p>
-                        I'm particularly interested in modern QA practices,
-                        test automation, developer tools, and AI-assisted
-                        workflows that can make software delivery more
-                        efficient and reliable.
-                    </p>
-
-                </div>
-
-                <div class="highlight-box">
-
-                    <h3>What I Bring</h3>
-
-                    <ul>
-                        <li>Software quality and testing</li>
-                        <li>Business and product perspective</li>
-                        <li>UAT and stakeholder coordination</li>
-                        <li>Test automation with Playwright</li>
-                        <li>Jira and Xray workflows</li>
-                        <li>AI-assisted QA and productivity</li>
-                    </ul>
-
-                </div>
-
-            </div>
-
+      <section class="bottom-grid">
+        <div class="info-panel" id="about">
+          <h3>A quality professional with a product mindset.</h3>
+          <p>
+            My experience across customer support, quality evaluation, UAT,
+            product management, and software quality engineering helps me
+            connect technical validation with business outcomes.
+          </p>
         </div>
 
-    </section>
-
-
-    <!-- SKILLS -->
-
-    <section id="skills">
-
-        <div class="container">
-
-    
-
-            <h2 class="section-title">
-                What I Bring to the Table
-            </h2>
-
-            <p class="section-description">
-                A combination of quality engineering, product knowledge,
-                technical tools, and AI capabilities.
-            </p>
-
-            <div class="skill-grid">
-
-                <div class="skill-card">
-
-                    <h3>Quality Engineering</h3>
-
-                    <p>
-                        Manual testing, test design, regression testing,
-                        defect analysis, UAT, and quality validation.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Manual QA</span>
-                        <span class="skill-tag">UAT</span>
-                        <span class="skill-tag">Test Cases</span>
-                        <span class="skill-tag">Regression</span>
-                        <span class="skill-tag">Bug Reporting</span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h3>Automation & Development Tools</h3>
-
-                    <p>
-                        Working with modern tools for test automation,
-                        source control, development environments,
-                        and data validation.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Playwright</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h3>Jira & Test Management</h3>
-
-                    <p>
-                        Using Jira-centered workflows for requirements,
-                        defects, testing activities, and quality tracking.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Jira</span>
-                        <span class="skill-tag">Xray</span>
-                        <span class="skill-tag">Requirements</span>
-                        <span class="skill-tag">Defects</span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h3>AI & Prompt Engineering</h3>
-
-                    <p>
-                        Exploring AI-assisted workflows for testing,
-                        documentation, analysis, productivity,
-                        and software quality.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">GitHub Copilot</span>
-                        <span class="skill-tag">AI QA</span>
-                        <span class="skill-tag">Automation</span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h3>Product & Business</h3>
-
-                    <p>
-                        Experience translating business needs into
-                        requirements, acceptance criteria, product
-                        workflows, and quality outcomes.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Product Management</span>
-                        <span class="skill-tag">Requirements</span>
-                        <span class="skill-tag">Stakeholders</span>
-                        <span class="skill-tag">Agile</span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h3>Process Improvement</h3>
-
-                    <p>
-                        Applying structured problem-solving and
-                        continuous improvement approaches to
-                        software and business processes.
-                    </p>
-
-                    <div>
-                        <span class="skill-tag">Six Sigma</span>
-                        <span class="skill-tag">Agile</span>
-                        <span class="skill-tag">Process Improvement</span>
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="info-panel" id="skills">
+          <h3>Skills & Tools</h3>
+          <div class="skills">
+            <span class="skill">Manual Testing</span>
+            <span class="skill">Regression & Smoke</span>
+            <span class="skill">UAT</span>
+            <span class="skill">Playwright</span>
+            <span class="skill">Jira / Xray</span>
+            <span class="skill">GitHub</span>
+            <span class="skill">AI Workflows</span>
+            <span class="skill">Prompt Engineering</span>
+            <span class="skill">Product Mindset</span>
+          </div>
         </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="projects">
-
-        <div class="container">
-
-          
-
-            <h2 class="section-title">
-               Here are some of my work samples
-            </h2>
-
-            <p class="section-description">
-                Examples of the type of work I can deliver.
-                Detailed project artifacts will be added as the portfolio
-                continues to grow.
-            </p>
-
-            <div class="project-grid">
-
-                <div class="project-card">
-
-                   
-
-                   <h3>
-    <a href="qa-test-design.html">
-        QA Test Design
-    </a>
-</h3>
-
-<p>
-    Structured test scenarios covering functional
-    requirements, positive and negative conditions,
-    edge cases, and expected results.
-</p>
-
-<a href="qa-test-design.html"
-   style="color: #60a5fa; margin-top: 15px; font-size: 0.85rem;">
-    View →
-</a>
-
-
-                </div>
-
-
-               <div class="project-card">
- 
-
-    <h3>
-        <a href="defect-investigation.html">
-            Defect Investigation
-        </a>
-    </h3>
-
-    <p>
-        Demonstrating structured bug reporting, reproduction,
-        investigation, and root cause thinking.
-    </p>
-
-    <a href="defect-investigation.html"    
-        style="color: #60a5fa; margin-top: 15px; font-size: 0.85rem;">
-    View →
-</a>
-
- 
-</div>
-
-
-              <div class="project-card">
-
-
-    <h3>
-        <a href="uat-user-journey.html">
-            UAT User Journey
-        </a>
-    </h3>
-
-    <p>
-        Demonstrating end-to-end user journey validation,
-        business-focused testing, and acceptance validation.
-    </p>
-
-    <a href="uat-user-journey.html" 
-        style="color: #60a5fa; margin-top: 15px; font-size: 0.85rem;">
-    View →
-    </a>
-
-
-</div>
-
-               <div class="project-card">
- 
-
-    <h3>
-        <a href="playwright-automation.html">
-            Playwright Automation
-        </a>
-    </h3>
-
-    <p>
-        Demonstrating UI automation, reusable test design,
-        assertions, and regression testing using Playwright.
-    </p>
-
-    <a href="playwright-automation.html" 
-        style="color: #60a5fa; margin-top: 15px; font-size: 0.85rem;">
-    View →
-    </a>
-
-  
-</div>
-
-
-               <div class="project-card">
-
-
-    <h3>
-        <a href="ai-qa-assistant.html">
-            AI QA Assistant
-        </a>
-    </h3>
-
-    <p>
-        Demonstrating AI-assisted test analysis, Jira workflows,
-        test generation, and QA workflow automation.
-    </p>
-
-    <a href="ai-qa-assistant.html" 
-        style="color: #60a5fa; margin-top: 15px; font-size: 0.85rem;">
-    View →
-    </a>
-
-
-</div>
-
-
-<div class="project-card">
-  
-
-    <h3>
-        <a href="release-quality-report.html">
-            Release Quality Report
-        </a>
-    </h3>
-
-    <p>
-        Demonstrating QA reporting, release readiness,
-        risk analysis, and stakeholder communication.
-    </p>
-
-    <a href="release-quality-report.html" 
-        style="color: #60a5fa; margin-top: 15px; font-size: 0.85rem;">
-    View →
-    </a>
-
-  
-</div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EXPERIENCE -->
-
-    <section id="experience">
-
-        <div class="container">
-
-          
-
-            <h2 class="section-title">
-                How I Got Here
-            </h2>
-
-            <p class="section-description">
-                A progression from creative and customer-facing roles
-                into quality engineering, product management, and
-                technology-focused work.
-            </p>
-
-            <div class="timeline">
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        October 2025 – October 2026
-                    </div>
-
-                    <h3>Software Quality Engineer</h3>
-
-                    <div class="timeline-company">
-                        Concentrix
-                    </div>
-
-                    <div class="timeline-description">
-                        Software quality, testing, automation,
-                        defect validation, and modern QA practices.
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        October 2023 – October 2025
-                    </div>
-
-                    <h3>Product Manager</h3>
-
-                    <div class="timeline-company">
-                        Concentrix
-                    </div>
-
-                    <div class="timeline-description">
-                        Product-focused work involving requirements,
-                        stakeholder coordination, product workflows,
-                        and delivery support.
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        September 2021 – October 2023
-                    </div>
-
-                    <h3>Product Subject Matter Expert</h3>
-
-                    <div class="timeline-company">
-                        Concentrix
-                    </div>
-
-                    <div class="timeline-description">
-                        Product knowledge, process support, user
-                        understanding, and collaboration across
-                        business and technology functions.
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        January 2020 – September 2021
-                    </div>
-
-                    <h3>User Acceptance Tester</h3>
-
-                    <div class="timeline-company">
-                        Concentrix
-                    </div>
-
-                    <div class="timeline-description">
-                        Business-focused software validation,
-                        user acceptance testing, scenario creation,
-                        and requirement validation.
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        October 2015 – January 2020
-                    </div>
-
-                    <h3>Quality Evaluator</h3>
-
-                    <div class="timeline-company">
-                        Concentrix
-                    </div>
-
-                    <div class="timeline-description">
-                        Quality evaluation, performance analysis,
-                        process adherence, coaching support,
-                        and continuous improvement.
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        October 2014 – October 2015
-                    </div>
-
-                    <h3>Customer Service Representative</h3>
-
-                    <div class="timeline-company">
-                        Concentrix
-                    </div>
-
-                    <div class="timeline-description">
-                        Customer support and frontline operational
-                        experience.
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        January 2013 – October 2014
-                    </div>
-
-                    <h3>Graphic Artist</h3>
-
-                    <div class="timeline-company">
-                        Ask Team Tech Update
-                    </div>
-
-                    <div class="timeline-description">
-                        Graphic design and visual content creation.
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EDUCATION -->
-
-    <section id="education">
-
-        <div class="container">
-
-          
-
-            <h2 class="section-title">
-                Where I Learned My Craft
-            </h2>
-
-            <div class="education-grid">
-
-                <div class="education-card">
-
-                    <h3>
-                        Bachelor of Science in Computer Studies
-                    </h3>
-
-                    <p>
-                        Our Lady of Fatima University
-                    </p>
-
-                </div>
-
-
-                <div class="education-card">
-
-                    <h3>
-                        Associate of Science in Computer Technology
-                    </h3>
-
-                    <p>
-                        ACLC College
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CERTIFICATIONS -->
-
-    <section>
-
-        <div class="container">
-
-         
-
-            <h2 class="section-title">
-                What I’ve Continued to Learn
-            </h2>
-
-            <div class="cert-list">
-
-                <div class="cert">
-                    Prompt and Context Engineering — Level 2
-                    <br>
-                    <small>Next Wave Academy</small>
-                </div>
-
-                <div class="cert">
-                    Six Sigma Green Belt Training
-                </div>
-
-                <div class="cert">
-                    Six Sigma Yellow Belt Training
-                </div>
-
-                <div class="cert">
-                    Adopting Agile: Strategies for Successful Implementation
-                </div>
-
-                <div class="cert">
-                    Building Resilience
-                </div>
-
-                <div class="cert">
-                    Prompt Engineering
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-        <div class="container">
-
-            <div class="contact-box">
-
-                <p class="section-label">
-                    Let’s Start a Conversation
-                </p>
-
-                <h2>
-                    I'm open to new opportunities!
-                </h2>
-
-                <p>
-                    I’m interested in remote/virtual opportunities where QA, software testing, UAT, quality evaluation, customer service, product support, product management, automation, and AI-assisted workflows can add value.
-                </p>
-
-<div class="contact-icons">
-
-    <a href="mailto:neilkennethleyson@gmail.com" title="Email me">
-        <img src="https://cdn.simpleicons.org/gmail" alt="Gmail">
-    </a>
-
-    <a href="https://wa.me/639612280737" target="_blank" title="WhatsApp">
-        <img src="https://cdn.simpleicons.org/whatsapp" alt="WhatsApp">
-    </a>
-
-    <a href="https://www.linkedin.com/in/neil-kenneth-leyson-53a48a3b7/" target="_blank" title="LinkedIn">
-<img src="assets/images/linkedin.png" alt="LinkedIn">
-    </a>
-
-    <a href="https://www.upwork.com/freelancers/~01d9d1212f9a629db7" target="_blank" title="Upwork">
-        <img src="https://cdn.simpleicons.org/upwork" alt="Upwork">
-    </a>
-
-</div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="container footer-container">
-
-            <div>
-                © 2026 Neil Kenneth Leyson
-            </div>
-
-            <div>
-                Software Quality Engineer · QA · Product · AI
-            </div>
-
-        </div>
-
-    </footer>
-<script>
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    };
-</script>
+      </section>
+
+      <footer id="contact">
+        <span>© 2026 Neil Kenneth Leyson · QA Portfolio Dashboard</span>
+        <span>
+          <a href="mailto:neilkennethleyson@gmail.com">Email</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.linkedin.com/in/neil-kenneth-leyson-53a48a3b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/neilkennethleyson" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </span>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
