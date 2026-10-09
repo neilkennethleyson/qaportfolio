@@ -510,6 +510,28 @@
   }
 }
 
+
+    
+@media (max-width: 720px) {
+  /* Hide all navigation items when collapsed */
+  .sidebar:not(.expanded) nav {
+    display: none;
+  }
+
+  /* Keep the toggle button and logo visible */
+  .sidebar:not(.expanded) .sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar:not(.expanded) .brand {
+    display: flex;
+  }
+
+  /* Restore navigation when expanded */
+  .sidebar.expanded nav {
+    display: grid;
+  }
+}
     
   </style>
 </head>
