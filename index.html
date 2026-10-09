@@ -38,11 +38,10 @@
     }
 
 .sidebar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 235px;
   height: 100vh;
+  align-self: start;
   overflow-y: auto;
   background: var(--sidebar);
   border-right: 1px solid var(--border);
@@ -50,6 +49,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  min-width: 0;
   z-index: 100;
 }
 
@@ -192,7 +192,6 @@
     }
 
 main {
-  margin-left: 235px;
   padding: 16px 24px;
   min-width: 0;
   display: flex;
@@ -443,9 +442,8 @@ border-top: 1px solid var(--border);
 @media (min-width: 1500px) {
   main {
     max-width: 1600px;
-    width: calc(100% - 235px);
-    margin-left: 235px;
-    margin-right: 0;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -729,18 +727,7 @@ border-top: 1px solid var(--border);
     display: flex;
   }
 
-  .sidebar {
-    position: sticky;
-    top: 0;
-    left: auto;
-    width: auto;
-    height: 100dvh;
-  }
-
-  main {
-    margin-left: 0;
-    width: auto;
-  }
+ 
 }
 
     
