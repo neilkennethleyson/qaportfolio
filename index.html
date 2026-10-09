@@ -730,6 +730,53 @@ border-top: 1px solid var(--border);
  
 }
 
+#testDesignView[hidden] {
+  display: none !important;
+}
+
+.test-section {
+  margin-bottom: 24px;
+}
+
+.table-panel {
+  min-width: 0;
+}
+
+.test-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.test-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.test-table th,
+.test-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  min-width: 120px;
+}
+
+.test-table th {
+  color: var(--cyan);
+  background: #172941;
+  font-size: 11px;
+}
+
+.test-table td:first-child {
+  color: var(--cyan);
+  white-space: nowrap;
+}
+
+.test-table tbody tr:hover {
+  background: var(--panel-hover);
+}
     
   </style>
 
@@ -786,7 +833,7 @@ border-top: 1px solid var(--border);
     aria-label="View Work projects"
     hidden
   >
-    <a href="https://neilkennethleyson.github.io/qa-test-design.html">Test Design</a>
+    <a href="#test-design" id="testDesignLink">Test Design</a>
     <a href="https://neilkennethleyson.github.io/defect-investigation.html">Defect Investigation</a>
     <a href="https://neilkennethleyson.github.io/uat-user-journey.html">UAT User Journey</a>
     <a href="https://neilkennethleyson.github.io/playwright-automation.html">Playwright Automation</a>
@@ -835,7 +882,8 @@ border-top: 1px solid var(--border);
     </aside>
 
     <main>
-       <div class="breadcrumb">
+      <div id="overviewView">
+    <div class="breadcrumb">
   <span>Portfolio / <strong>Overview</strong></span>
   <img src="assets/images/profile1.png" alt="Profile picture" class="profile-picture">
 </div>
@@ -956,6 +1004,229 @@ border-top: 1px solid var(--border);
           <a href="https://github.com/neilkennethleyson" target="_blank" rel="noopener noreferrer">GitHub</a>
         </span>
       </footer>
+
+          </div>
+
+  <div id="testDesignView" hidden>
+    
+<div class="breadcrumb">
+  <span>Portfolio / <strong>Test Design</strong></span>
+  <a class="top-link" href="#overview" data-show-overview>← Back to Overview</a>
+</div>
+
+<section class="hero">
+  <div class="eyebrow">QA PORTFOLIO / TEST DESIGN</div>
+  <h1>QA Test Design</h1>
+  <h2>Structured scenarios. Clear coverage. Business-focused validation.</h2>
+  <p>
+    A sample functional testing project demonstrating positive and negative
+    scenarios, validation logic, and risk-based quality thinking.
+  </p>
+</section>
+
+<section class="metrics" aria-label="Project details">
+  <div class="metric">
+    <div class="metric-label">ROLE</div>
+    <div class="metric-value">QA / UAT</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">APPLICATION</div>
+    <div class="metric-value">Time-Off Portal</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">TESTING</div>
+    <div class="metric-value">Functional</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">FOCUS</div>
+    <div class="metric-value">User Workflows</div>
+  </div>
+</section>
+
+<section class="test-section">
+  <div class="section-heading">
+    <div>
+      <h2>Project Overview</h2>
+      <p>Purpose and scope</p>
+    </div>
+  </div>
+  <div class="info-panel">
+    <p>
+      The fictional application is an employee self-service portal where
+      employees can submit, review, and cancel time-off requests.
+      The objective is to validate core workflows and identify validation,
+      authorization, and edge-case scenarios.
+    </p>
+  </div>
+</section>
+
+<section class="test-section">
+  <div class="section-heading">
+    <div>
+      <h2>Testing Approach</h2>
+      <p>Coverage across key risk areas</p>
+    </div>
+  </div>
+  <div class="projects">
+    <article class="project">
+      <h3>Functional Testing</h3>
+      <p>Validate supported actions such as creating and cancelling requests.</p>
+    </article>
+    <article class="project">
+      <h3>Negative Testing</h3>
+      <p>Check that invalid inputs and unsupported workflows are handled correctly.</p>
+    </article>
+    <article class="project">
+      <h3>Boundary & Edge Cases</h3>
+      <p>Consider date boundaries, overlapping requests, and unusual inputs.</p>
+    </article>
+    <article class="project">
+      <h3>Authorization</h3>
+      <p>Verify users cannot access data or functions outside their permissions.</p>
+    </article>
+  </div>
+</section>
+
+<section class="test-section">
+  <div class="section-heading">
+    <div>
+      <h2>Sample Test Scenarios</h2>
+      <p>Representative functional and negative test coverage</p>
+    </div>
+  </div>
+
+  <div class="info-panel table-panel">
+    <div class="test-table-wrap">
+      <table class="test-table">
+        <thead>
+          <tr>
+            <th>Test ID</th>
+            <th>Scenario</th>
+            <th>Test Condition</th>
+            <th>Expected Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TC-001</td>
+            <td>Submit valid request</td>
+            <td>User selects a valid future date and submits.</td>
+            <td>Request is submitted with the appropriate status.</td>
+          </tr>
+          <tr>
+            <td>TC-002</td>
+            <td>Missing date</td>
+            <td>User submits without selecting a required date.</td>
+            <td>Validation appears and the request is not submitted.</td>
+          </tr>
+          <tr>
+            <td>TC-003</td>
+            <td>Overlapping request</td>
+            <td>Selected dates overlap an existing approved request.</td>
+            <td>The conflicting request is prevented with appropriate feedback.</td>
+          </tr>
+          <tr>
+            <td>TC-004</td>
+            <td>Cancel request</td>
+            <td>User cancels an eligible submitted request.</td>
+            <td>Status changes to Cancelled.</td>
+          </tr>
+          <tr>
+            <td>TC-005</td>
+            <td>Restricted request</td>
+            <td>User attempts to access another employee's request.</td>
+            <td>Unauthorized access is denied.</td>
+          </tr>
+          <tr>
+            <td>TC-006</td>
+            <td>Same start and end date</td>
+            <td>User selects the same date for both fields.</td>
+            <td>Accepted if single-day time off is supported.</td>
+          </tr>
+          <tr>
+            <td>TC-007</td>
+            <td>Refresh after submission</td>
+            <td>User refreshes after submitting a request.</td>
+            <td>The request remains saved with the correct status.</td>
+          </tr>
+          <tr>
+            <td>TC-008</td>
+            <td>Session expiration</td>
+            <td>The session expires while accessing the request page.</td>
+            <td>User must reauthenticate and protected information remains secure.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="test-section">
+  <div class="section-heading">
+    <div>
+      <h2>Actual Test Cases</h2>
+      <p>Example of structured test steps and expected results</p>
+    </div>
+  </div>
+  <div class="info-panel">
+    <img
+      src="https://neilkennethleyson.github.io/assets/images/qa-test-cases.png"
+      alt="Example of QA test cases in a spreadsheet"
+      style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);"
+    />
+    <div class="hero-actions">
+      <a class="button button-primary"
+         href="https://neilkennethleyson.github.io/assets/QA-Test-Design.xlsx"
+         target="_blank" rel="noopener noreferrer">
+        Download Test Cases Excel ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="test-section">
+  <div class="section-heading">
+    <div>
+      <h2>What I Look For</h2>
+      <p>How I approach quality</p>
+    </div>
+  </div>
+  <div class="projects">
+    <article class="project">
+      <h3>Requirements → Coverage</h3>
+      <p>Translate requirements into testable scenarios and identify gaps.</p>
+    </article>
+    <article class="project">
+      <h3>Happy Path → Failure Conditions</h3>
+      <p>Validate expected behavior and how the application handles invalid input.</p>
+    </article>
+    <article class="project">
+      <h3>User & Business Impact</h3>
+      <p>Consider usability, data integrity, business processes, and downstream effects.</p>
+    </article>
+  </div>
+</section>
+
+<section class="test-section">
+  <div class="info-panel">
+    <h3>Relevant Tools & Practices</h3>
+    <div class="skills">
+      <span class="skill">Jira</span>
+      <span class="skill">Xray</span>
+      <span class="skill">Test Case Design</span>
+      <span class="skill">Functional Testing</span>
+      <span class="skill">Regression Testing</span>
+      <span class="skill">UAT</span>
+      <span class="skill">Defect Reporting</span>
+    </div>
+    <p style="margin-top:16px;">
+      Portfolio note: This is a fictional demonstration project and contains
+      no confidential company or customer data.
+    </p>
+  </div>
+</section>
+  </div>
+      
     </main>
   </div>
 
@@ -1014,5 +1285,40 @@ border-top: 1px solid var(--border);
     certificatesSubmenu.hidden = isExpanded;
   });
 </script>
+
+<script>
+  const overviewView = document.getElementById("overviewView");
+  const testDesignView = document.getElementById("testDesignView");
+  const testDesignLink = document.getElementById("testDesignLink");
+
+  function showPortfolioPage(page) {
+    const showTestDesign = page === "test-design";
+
+    overviewView.hidden = showTestDesign;
+    testDesignView.hidden = !showTestDesign;
+
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    if (showTestDesign) {
+      history.replaceState(null, "", "#test-design");
+    } else {
+      history.replaceState(null, "", "#overview");
+    }
+  }
+
+  testDesignLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    showPortfolioPage("test-design");
+  });
+
+  document.querySelectorAll('a[href="#overview"], a[data-show-overview]')
+    .forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        showPortfolioPage("overview");
+      });
+    });
+</script>
+  
 </body>
 </html>
