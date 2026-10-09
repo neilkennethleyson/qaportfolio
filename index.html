@@ -841,7 +841,24 @@ transition: left 0.2s ease;
   display: none !important;
 }
 
+.certificate-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #22d3ee;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: 1px solid #22d3ee;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
 
+.certificate-link:hover {
+  background: rgba(34, 211, 238, 0.12);
+  color: #67e8f9;
+  text-decoration: none;
+}
 
     
   </style>
@@ -2594,13 +2611,17 @@ test('user can sign in successfully', async ({ page }) => {
       in Writing.
     </p>
 
-    <p>
-      <a href="https://cert.efset.org/M56KjT"
-         target="_blank"
-         rel="noopener noreferrer">
-        Official EF SET Certificate | Neil Kenneth Leyson
-      </a>
-    </p>
+<p>
+  <a
+    href="https://cert.efset.org/M56KjT"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="certificate-link"
+  >
+    <i class="fas fa-external-link-alt"></i>
+    View Official EF SET Certificate
+  </a>
+</p>
 
     <img
       src="assets/images/english.png"
