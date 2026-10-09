@@ -37,14 +37,21 @@
       min-height: 100vh;
     }
 
-    .sidebar {
-      background: var(--sidebar);
-      border-right: 1px solid var(--border);
-      padding: 28px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 235px;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--sidebar);
+  border-right: 1px solid var(--border);
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  z-index: 100;
+}
 
     .brand {
       display: flex;
@@ -184,12 +191,13 @@
       margin-bottom: 0;
     }
 
-    main {
-padding: 16px 24px;
-min-width: 0;
-display: flex;
-flex-direction: column;
-min-height: 100vh;
+main {
+  margin-left: 235px;
+  padding: 16px 24px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
     .topbar {
@@ -216,8 +224,8 @@ color: var(--text);
 }
 
 .profile-picture {
-  width: 44px;
-  height: 44px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border);
@@ -432,9 +440,14 @@ padding-top: 7px;
 border-top: 1px solid var(--border);
 }
 
-    @media (min-width: 1500px) {
-      main { max-width: 1600px; width: 100%; margin: 0 auto; }
-    }
+@media (min-width: 1500px) {
+  main {
+    max-width: 1600px;
+    width: calc(100% - 235px);
+    margin-left: 235px;
+    margin-right: 0;
+  }
+}
 
     @media (max-width: 1050px) {
       main { padding: 24px; }
@@ -715,6 +728,20 @@ border-top: 1px solid var(--border);
   .sidebar.expanded .nav-group-toggle {
     display: flex;
   }
+
+    .sidebar {
+    position: sticky;
+    top: 0;
+    left: auto;
+    width: auto;
+    height: 100dvh;
+  }
+
+  main {
+    margin-left: 0;
+    width: auto;
+  }
+}
 }
 
     
