@@ -801,10 +801,17 @@ border-top: 1px solid var(--border);
   <div class="nav-label">WORKSPACE</div>
 
   <nav aria-label="Portfolio navigation">
-    <a class="active" href="#overview">
-      <span class="nav-icon">◈</span>
-      <span class="nav-text">Overview</span>
-    </a>
+    <button
+  class="nav-group-toggle"
+  id="overviewToggle"
+  type="button"
+  onclick="showPortfolioPage('overview')"
+>
+  <span>
+    <span class="nav-icon">◈</span>
+    <span class="nav-text">Overview</span>
+  </span>
+</button>
   </nav>
 
   <button
