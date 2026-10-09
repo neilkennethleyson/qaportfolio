@@ -2657,12 +2657,8 @@ test('user can sign in successfully', async ({ page }) => {
   </section>
 </div>
 
-      
-      
-    </main>
-  </div>
 
-<div id="resumeView" hidden>
+      <div id="resumeView" hidden>
   <div class="breadcrumb">
     <a href="#overview" data-show-overview>Portfolio</a>
     <span>/</span>
@@ -2706,6 +2702,12 @@ test('user can sign in successfully', async ({ page }) => {
     </div>
   </section>
 </div>
+
+      
+      
+    </main>
+  </div>
+
 
 
   
@@ -2850,7 +2852,8 @@ const englishCertificationLink =
   const testDesignLink = document.getElementById("testDesignLink");
   const defectInvestigationLink =
     document.getElementById("defectInvestigationLink");
-
+  
+const resumeView = document.getElementById("resumeView");
  
 function showPortfolioPage(page) {
   overviewView.hidden = page !== "overview";
@@ -2864,7 +2867,7 @@ function showPortfolioPage(page) {
   sixSigmaGreenBeltView.hidden = page !== "six-sigma-green-belt";
   promptEngineeringView.hidden = page !== "prompt-engineering";
 englishCertificationView.hidden = page !== "english-certification";
-
+resumeView.hidden = page !== "resume";
   
   history.replaceState(
     null,
@@ -2949,7 +2952,8 @@ if (
   initialPage === "six-sigma-yellow-belt" ||
   initialPage === "six-sigma-green-belt" ||
   initialPage === "prompt-engineering" ||
-initialPage === "english-certification"
+initialPage === "english-certification" ||
+  initialPage === "resume"
 
   
 ) {
