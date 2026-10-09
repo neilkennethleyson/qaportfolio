@@ -2606,6 +2606,8 @@ function showPortfolioPage(page) {
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
+  
+
   testDesignLink.addEventListener("click", function (event) {
     event.preventDefault();
     showPortfolioPage("test-design");
@@ -2658,6 +2660,23 @@ if (
 } else {
   showPortfolioPage("overview");
 }
+
+
+  
+window.addEventListener("load", function () {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "instant"
+  });
+});
+
+
+  
 </script>
   
 </body>
