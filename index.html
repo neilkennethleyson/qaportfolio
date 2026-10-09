@@ -624,6 +624,21 @@ border-top: 1px solid var(--border);
   }
 }
 
+/* Keep expanded mobile dropdown items in one column */
+@media (max-width: 720px) {
+  .sidebar.expanded .submenu {
+    grid-template-columns: 1fr;
+    padding-left: 18px;
+  }
+
+  .sidebar.expanded .submenu a {
+    justify-content: flex-start;
+    text-align: left;
+    white-space: normal;
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+}
 
 @media (max-width: 720px) {
   /* Hide all navigation except the menu toggle when collapsed */
@@ -1468,7 +1483,14 @@ border-top: 1px solid var(--border);
 
   function setSidebarExpanded(expanded) {
     sidebar.classList.toggle("expanded", expanded);
+    // Collapse both dropdowns when closing the mobile sidebar
+    if (!expanded && window.innerWidth <= 720) {
+      viewWorkToggle.setAttribute("aria-expanded", "false");
+      viewWorkSubmenu.hidden = true;
 
+      certificatesToggle.setAttribute("aria-expanded", "false");
+      certificatesSubmenu.hidden = true;
+    }
     toggle.setAttribute("aria-expanded", String(expanded));
     toggle.setAttribute(
       "aria-label",
