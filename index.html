@@ -798,7 +798,7 @@ border-top: 1px solid var(--border);
       <a class="brand" href="#overview" aria-label="Portfolio overview">
         <div class="brand-mark">NKL</div>
         <div>
-          <div class="brand-name">QA PORTFOLIO</div>
+          <div class="brand-name">PORTFOLIO</div>
           <div class="brand-sub">QUALITY ENGINEERING</div>
         </div>
       </a>
@@ -834,7 +834,7 @@ border-top: 1px solid var(--border);
     hidden
   >
     <a href="#test-design" id="testDesignLink">Test Design</a>
-    <a href="https://neilkennethleyson.github.io/defect-investigation.html">Defect Investigation</a>
+    <a href="#defect-investigation" id="defectInvestigationLink">Defect Investigation</a>
     <a href="https://neilkennethleyson.github.io/uat-user-journey.html">UAT User Journey</a>
     <a href="https://neilkennethleyson.github.io/playwright-automation.html">Playwright Automation</a>
     <a href="https://neilkennethleyson.github.io/ai-qa-assistant.html">AI QA Assistant</a>
@@ -1015,7 +1015,7 @@ border-top: 1px solid var(--border);
 </div>
 
 <section class="hero">
-  <div class="eyebrow">QA PORTFOLIO / TEST DESIGN</div>
+
   <h1>QA Test Design</h1>
   <h2>Structured scenarios. Clear coverage. Business-focused validation.</h2>
   <p>
@@ -1232,6 +1232,267 @@ border-top: 1px solid var(--border);
 
 
 
+
+
+<div id="defectInvestigationView" hidden>
+  <div class="breadcrumb">
+    <span>Portfolio / <strong>Defect Investigation</strong></span>
+    <a class="top-link" href="#overview" data-show-overview>← Back to Overview</a>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow">QA PORTFOLIO / DEFECT ANALYSIS</div>
+    <h1>Defect Investigation</h1>
+    <h2>Reproduce the issue. Validate the impact. Support resolution.</h2>
+    <p>
+      A demonstration of how I document unexpected behavior, establish
+      reproducible steps, compare expected versus actual results, and
+      investigate potential causes and business impact.
+    </p>
+  </section>
+
+  <section class="metrics" aria-label="Defect summary">
+    <div class="metric">
+      <div class="metric-label">ROLE</div>
+      <div class="metric-value">QA Engineer</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">APPLICATION</div>
+      <div class="metric-value">Support Portal</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">DEFECT TYPE</div>
+      <div class="metric-value">Functional</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">PRIORITY</div>
+      <div class="metric-value">High</div>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>Sample Jira-Style Defect</h2>
+        <p>Clear documentation for investigation and resolution</p>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <div class="eyebrow">DEMO-1042</div>
+      <h3 style="margin-top:10px;">
+        Customer status does not update after profile change
+      </h3>
+
+      <div class="skills" style="margin:14px 0;">
+        <span class="skill">Severity: High</span>
+        <span class="skill">Priority: High</span>
+        <span class="skill">Status: Open</span>
+        <span class="skill">Frequency: Consistent</span>
+      </div>
+
+      <p>
+        <strong>Environment:</strong> Web Application / Chrome<br>
+        <strong>Component:</strong> Customer Profile
+      </p>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>Steps to Reproduce</h2>
+        <p>Repeatable steps to confirm the behavior</p>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <ol style="color:var(--muted);font-size:13px;line-height:2;">
+        <li>Log in using a valid customer-service account.</li>
+        <li>Navigate to the Customer Profile page.</li>
+        <li>Open an existing customer record.</li>
+        <li>Change the customer's status from Active to Inactive.</li>
+        <li>Click Save.</li>
+        <li>Refresh the page and review the customer's status.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>Expected vs Actual</h2>
+        <p>Identify the difference between intended and observed behavior</p>
+      </div>
+    </div>
+
+    <div class="projects">
+      <article class="project">
+        <div class="project-icon">✓</div>
+        <h3>Expected Result</h3>
+        <p>
+          After saving the profile, the customer's status should update
+          to Inactive and remain Inactive after refreshing the page.
+        </p>
+        <span class="project-tag">EXPECTED BEHAVIOR</span>
+      </article>
+
+      <article class="project">
+        <div class="project-icon">!</div>
+        <h3>Actual Result</h3>
+        <p>
+          The interface initially displays the updated status, but after
+          refreshing the page the customer's status returns to Active.
+        </p>
+        <span class="project-tag">OBSERVED DEFECT</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>Investigation & Impact</h2>
+        <p>Look beyond the visible symptom</p>
+      </div>
+    </div>
+
+    <div class="projects">
+      <article class="project">
+        <h3>Initial Observation</h3>
+        <p>
+          The UI appears to accept the change successfully, suggesting
+          the initial client-side operation completed without an error.
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Persistence Check</h3>
+        <p>
+          Refreshing the page reveals that the updated value was not
+          persisted correctly.
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Business Impact</h3>
+        <p>
+          Users may rely on an incorrect customer status, potentially
+          causing incorrect downstream processing or reporting.
+        </p>
+      </article>
+    </div>
+
+    <div class="info-panel" style="margin-top:13px;">
+      <h3>Recommended Investigation</h3>
+      <p>
+        Review the save request, API response, persistence layer, and
+        subsequent profile retrieval to determine where the state is lost.
+        These are investigation areas, not a confirmed root cause.
+      </p>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>Actual Bug Documentation Evidence</h2>
+        <p>Examples of defect documentation and supporting evidence</p>
+      </div>
+    </div>
+
+    <div class="projects" style="grid-template-columns:1fr;">
+      <article class="project">
+        <h3>Evidence 1 — Staffing table fails to load</h3>
+        <p>
+          A reported issue involving batch-released schedules and the
+          Capacity Planning Staffing table.
+        </p>
+        <a href="https://neilkennethleyson.github.io/assets/images/bug1.png"
+           target="_blank" rel="noopener noreferrer">
+          <img src="https://neilkennethleyson.github.io/assets/images/bug1.png"
+               alt="Bug documentation evidence 1"
+               loading="lazy"
+               style="width:100%;height:auto;border-radius:8px;border:1px solid var(--border);">
+        </a>
+      </article>
+
+      <article class="project">
+        <h3>Evidence 2 — Forecast interval data issue</h3>
+        <p>
+          An example of documenting unexpected data behavior after
+          changing a forecasting interval.
+        </p>
+        <a href="https://neilkennethleyson.github.io/assets/images/bug2.png"
+           target="_blank" rel="noopener noreferrer">
+          <img src="https://neilkennethleyson.github.io/assets/images/bug2.png"
+               alt="Bug documentation evidence 2"
+               loading="lazy"
+               style="width:100%;height:auto;border-radius:8px;border:1px solid var(--border);">
+        </a>
+      </article>
+
+      <article class="project">
+        <h3>Evidence 3 — Time-off request submission failure</h3>
+        <p>
+          An example of documenting a failed user workflow with
+          reproduction steps and expected results.
+        </p>
+        <a href="https://neilkennethleyson.github.io/assets/images/bug3.png"
+           target="_blank" rel="noopener noreferrer">
+          <img src="https://neilkennethleyson.github.io/assets/images/bug3.png"
+               alt="Bug documentation evidence 3"
+               loading="lazy"
+               style="width:100%;height:auto;border-radius:8px;border:1px solid var(--border);">
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>Why This Matters</h2>
+        <p>Reduce back-and-forth and support faster investigation</p>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <h3>A good defect report should reduce back-and-forth.</h3>
+      <p>
+        Clear reproduction steps, precise expected and actual results,
+        environment details, frequency, and business impact help developers
+        and stakeholders understand the problem quickly.
+      </p>
+      <p style="margin-top:12px;">
+        My approach is to investigate beyond the visible symptom whenever
+        possible. I consider the complete workflow and ask where the data,
+        state, or expected behavior may have broken down.
+      </p>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="info-panel">
+      <h3>Relevant Tools & Practices</h3>
+      <div class="skills">
+        <span class="skill">Jira Bug Reporting</span>
+        <span class="skill">Functional Testing</span>
+        <span class="skill">Regression Testing</span>
+        <span class="skill">Browser DevTools</span>
+        <span class="skill">API Investigation</span>
+        <span class="skill">Root Cause Analysis</span>
+      </div>
+      <p style="margin-top:16px;">
+        Portfolio note: The DEMO-1042 example is fictional. Review
+        screenshots for any work-related details before publishing them
+        publicly.
+      </p>
+    </div>
+  </section>
+</div>  
+
+
 <script>
   const sidebar = document.getElementById("sidebar");
   const toggle = document.getElementById("sidebarToggle");
@@ -1289,26 +1550,35 @@ border-top: 1px solid var(--border);
 <script>
   const overviewView = document.getElementById("overviewView");
   const testDesignView = document.getElementById("testDesignView");
+  const defectInvestigationView =
+    document.getElementById("defectInvestigationView");
+
   const testDesignLink = document.getElementById("testDesignLink");
+  const defectInvestigationLink =
+    document.getElementById("defectInvestigationLink");
 
   function showPortfolioPage(page) {
-    const showTestDesign = page === "test-design";
+    overviewView.hidden = page !== "overview";
+    testDesignView.hidden = page !== "test-design";
+    defectInvestigationView.hidden = page !== "defect-investigation";
 
-    overviewView.hidden = showTestDesign;
-    testDesignView.hidden = !showTestDesign;
+    history.replaceState(
+      null,
+      "",
+      page === "overview" ? "#overview" : "#" + page
+    );
 
-    window.scrollTo({ top: 0, behavior: "instant" });
-
-    if (showTestDesign) {
-      history.replaceState(null, "", "#test-design");
-    } else {
-      history.replaceState(null, "", "#overview");
-    }
+    window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   testDesignLink.addEventListener("click", function (event) {
     event.preventDefault();
     showPortfolioPage("test-design");
+  });
+
+  defectInvestigationLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    showPortfolioPage("defect-investigation");
   });
 
   document.querySelectorAll('a[href="#overview"], a[data-show-overview]')
@@ -1318,6 +1588,17 @@ border-top: 1px solid var(--border);
         showPortfolioPage("overview");
       });
     });
+
+  const initialPage = location.hash.slice(1);
+
+  if (
+    initialPage === "test-design" ||
+    initialPage === "defect-investigation"
+  ) {
+    showPortfolioPage(initialPage);
+  } else {
+    showPortfolioPage("overview");
+  }
 </script>
   
 </body>
