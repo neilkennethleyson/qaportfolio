@@ -823,6 +823,9 @@ transition: left 0.2s ease;
   }
 }
 
+    #uatUserJourneyView[hidden] {
+  display: none !important;
+}
     
   </style>
 
@@ -888,7 +891,7 @@ transition: left 0.2s ease;
   >
     <a href="#test-design" id="testDesignLink">Test Design</a>
     <a href="#defect-investigation" id="defectInvestigationLink">Defect Investigation</a>
-    <a href="https://neilkennethleyson.github.io/uat-user-journey.html">UAT User Journey</a>
+    <a href="#uat-user-journey" id="uatUserJourneyLink">UAT User Journey</a>
     <a href="https://neilkennethleyson.github.io/playwright-automation.html">Playwright Automation</a>
     <a href="https://neilkennethleyson.github.io/ai-qa-assistant.html">AI QA Assistant</a>
     <a href="https://neilkennethleyson.github.io/release-quality-report.html">Release Quality Report</a>
@@ -1550,6 +1553,256 @@ transition: left 0.2s ease;
     </div>
   </section>
 </div>  
+
+
+<div id="uatUserJourneyView" hidden>
+  <div class="breadcrumb">
+    <span>Portfolio / <strong>UAT User Journey</strong></span>
+    <a class="top-link" href="#overview" data-show-overview>
+      ← Back to Overview
+    </a>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow">USER ACCEPTANCE TESTING</div>
+    <h1>UAT User Journey</h1>
+    <h2>Validate the complete workflow, not just individual screens.</h2>
+    <p>
+      A fictional UAT case study demonstrating user-focused testing,
+      business process validation, and end-to-end workflow thinking.
+    </p>
+  </section>
+
+  <section class="metrics" aria-label="Project details">
+    <div class="metric">
+      <div class="metric-label">ROLE</div>
+      <div class="metric-value">UAT / QA</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">APPLICATION</div>
+      <div class="metric-value">Employee Request Portal</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">TESTING</div>
+      <div class="metric-value">Acceptance</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">FOCUS</div>
+      <div class="metric-value">End-to-End Journey</div>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>Project Overview</h2>
+        <p>Business goal and UAT objective</p>
+      </div>
+    </div>
+    <div class="info-panel">
+      <p>
+        The objective is to validate whether an employee request workflow
+        works correctly from the user's perspective and supports the
+        expected business process.
+      </p>
+      <h3 style="margin-top:16px;">Business Goal</h3>
+      <p>
+        Allow employees to submit a request, allow the appropriate
+        approver to review it, and provide clear status visibility
+        throughout the process.
+      </p>
+      <h3 style="margin-top:16px;">UAT Objective</h3>
+      <p>
+        Confirm that the complete workflow is usable, understandable,
+        and aligned with the expected business outcome.
+      </p>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>User Journey</h2>
+        <p>From request creation to final status confirmation</p>
+      </div>
+    </div>
+    <div class="projects">
+      <article class="project">
+        <div class="project-icon">1</div>
+        <h3>Employee Logs In</h3>
+        <p>The employee signs in using a valid account and navigates to the request portal.</p>
+      </article>
+      <article class="project">
+        <div class="project-icon">2</div>
+        <h3>Create Request</h3>
+        <p>The employee selects the appropriate request type and provides the required information.</p>
+      </article>
+      <article class="project">
+        <div class="project-icon">3</div>
+        <h3>Submit Request</h3>
+        <p>The employee submits the request and verifies that the system provides confirmation.</p>
+      </article>
+      <article class="project">
+        <div class="project-icon">4</div>
+        <h3>Approver Reviews</h3>
+        <p>The designated approver reviews the request information and makes a decision.</p>
+      </article>
+      <article class="project">
+        <div class="project-icon">5</div>
+        <h3>Employee Checks Status</h3>
+        <p>The employee returns to the portal and verifies the status reflects the approver's decision.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>UAT Validation</h2>
+        <p>Business-focused validation points and expected outcomes</p>
+      </div>
+    </div>
+    <div class="info-panel table-panel">
+      <div class="test-table-wrap">
+        <table class="test-table">
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>Validation</th>
+              <th>Expected Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Login</td>
+              <td>User accesses the request portal.</td>
+              <td>Dashboard loads successfully.</td>
+            </tr>
+            <tr>
+              <td>Create</td>
+              <td>User enters all required information.</td>
+              <td>Request can be created without validation errors.</td>
+            </tr>
+            <tr>
+              <td>Submit</td>
+              <td>User submits the request.</td>
+              <td>Confirmation is displayed and the request receives an identifier.</td>
+            </tr>
+            <tr>
+              <td>Approval</td>
+              <td>Approver reviews the request.</td>
+              <td>Approver can approve or reject the request.</td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>Employee reviews the request afterward.</td>
+              <td>Status reflects the latest business decision.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>Actual UAT User Journey</h2>
+        <p>Sample documentation and structured validation steps</p>
+      </div>
+    </div>
+    <div class="info-panel">
+      <a href="https://neilkennethleyson.github.io/assets/images/UAT.png"
+         target="_blank" rel="noopener noreferrer">
+        <img
+          src="https://neilkennethleyson.github.io/assets/images/UAT.png"
+          alt="UAT user journey spreadsheet example"
+          loading="lazy"
+          style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);"
+        >
+      </a>
+      <div class="hero-actions">
+        <a class="button button-primary"
+           href="https://neilkennethleyson.github.io/assets/UAT.xlsx"
+           target="_blank" rel="noopener noreferrer">
+          Download UAT Journey Excel ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>UAT Thinking</h2>
+        <p>Connect individual tests to the user's real goal</p>
+      </div>
+    </div>
+    <div class="info-panel">
+      <h3>Test the business outcome, not just the screen.</h3>
+      <p>
+        UAT is not simply about checking whether individual test cases
+        pass. The bigger question is whether the product allows the user
+        to successfully complete the business task it was designed to support.
+      </p>
+      <p style="margin-top:12px;">
+        My approach connects individual validations into a complete user
+        journey while considering usability, business rules, status
+        transitions, notifications, data visibility, and expected outcomes.
+      </p>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="section-heading">
+      <div>
+        <h2>What This Demonstrates</h2>
+        <p>Business-focused quality thinking</p>
+      </div>
+    </div>
+    <div class="projects">
+      <article class="project">
+        <h3>Business Perspective</h3>
+        <p>Understand the business outcome behind a requirement instead of testing only the interface.</p>
+      </article>
+      <article class="project">
+        <h3>User Perspective</h3>
+        <p>Validate the product using realistic workflows and user goals.</p>
+      </article>
+      <article class="project">
+        <h3>End-to-End Thinking</h3>
+        <p>Connect multiple system interactions into a complete workflow.</p>
+      </article>
+      <article class="project">
+        <h3>Acceptance Validation</h3>
+        <p>Confirm the delivered functionality satisfies expected business behavior.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="info-panel">
+      <h3>Tools &amp; Techniques</h3>
+      <div class="skills">
+        <span class="skill">UAT</span>
+        <span class="skill">User Journey Mapping</span>
+        <span class="skill">Functional Testing</span>
+        <span class="skill">Business Validation</span>
+        <span class="skill">Requirements Analysis</span>
+        <span class="skill">Acceptance Criteria</span>
+        <span class="skill">Regression Testing</span>
+        <span class="skill">Defect Reporting</span>
+      </div>
+      <p style="margin-top:16px;">
+        Portfolio note: This is a fictional demonstration project and
+        contains no confidential, proprietary, customer, or company information.
+      </p>
+    </div>
+  </section>
+</div>
+
+
+      
     </main>
   </div>
 
@@ -1646,23 +1899,31 @@ transition: left 0.2s ease;
   const defectInvestigationView =
     document.getElementById("defectInvestigationView");
 
+const uatUserJourneyView =
+  document.getElementById("uatUserJourneyView");
+
+const uatUserJourneyLink =
+  document.getElementById("uatUserJourneyLink");
+  
+
   const testDesignLink = document.getElementById("testDesignLink");
   const defectInvestigationLink =
     document.getElementById("defectInvestigationLink");
 
   function showPortfolioPage(page) {
-    overviewView.hidden = page !== "overview";
-    testDesignView.hidden = page !== "test-design";
-    defectInvestigationView.hidden = page !== "defect-investigation";
+  overviewView.hidden = page !== "overview";
+  testDesignView.hidden = page !== "test-design";
+  defectInvestigationView.hidden = page !== "defect-investigation";
+  uatUserJourneyView.hidden = page !== "uat-user-journey";
 
-    history.replaceState(
-      null,
-      "",
-      page === "overview" ? "#overview" : "#" + page
-    );
+  history.replaceState(
+    null,
+    "",
+    page === "overview" ? "#overview" : "#" + page
+  );
 
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
 
   testDesignLink.addEventListener("click", function (event) {
     event.preventDefault();
@@ -1674,6 +1935,12 @@ transition: left 0.2s ease;
     showPortfolioPage("defect-investigation");
   });
 
+uatUserJourneyLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  showPortfolioPage("uat-user-journey");
+});
+
+  
   document.querySelectorAll('a[href="#overview"], a[data-show-overview]')
     .forEach(function (link) {
       link.addEventListener("click", function (event) {
@@ -1684,14 +1951,15 @@ transition: left 0.2s ease;
 
   const initialPage = location.hash.slice(1);
 
-  if (
-    initialPage === "test-design" ||
-    initialPage === "defect-investigation"
-  ) {
-    showPortfolioPage(initialPage);
-  } else {
-    showPortfolioPage("overview");
-  }
+if (
+  initialPage === "test-design" ||
+  initialPage === "defect-investigation" ||
+  initialPage === "uat-user-journey"
+) {
+  showPortfolioPage(initialPage);
+} else {
+  showPortfolioPage("overview");
+}
 </script>
   
 </body>
