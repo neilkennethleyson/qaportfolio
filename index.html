@@ -656,6 +656,39 @@ Add this below your existing sidebar styles:
     justify-content: flex-start;
   }
 }
+
+
+@media (max-width: 720px) {
+  /* Hide all navigation except the menu toggle when collapsed */
+  .sidebar:not(.expanded) nav,
+  .sidebar:not(.expanded) .nav-label,
+  .sidebar:not(.expanded) .nav-group-toggle,
+  .sidebar:not(.expanded) .sidebar-bottom,
+  .sidebar:not(.expanded) .brand-name,
+  .sidebar:not(.expanded) .brand-sub {
+    display: none !important;
+  }
+
+  /* Keep the menu button and logo visible */
+  .sidebar:not(.expanded) .sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar:not(.expanded) .brand {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Show View Work and navigation when expanded */
+  .sidebar.expanded nav {
+    display: grid;
+  }
+
+  .sidebar.expanded .nav-group-toggle {
+    display: flex;
+  }
+}
+
     
   </style>
 
