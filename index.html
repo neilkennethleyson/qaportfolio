@@ -489,20 +489,38 @@ border-top: 1px solid var(--border);
 
 @media (max-width: 720px) {
   .layout {
-    grid-template-columns: 64px minmax(0, 1fr);
+    display: block;
   }
 
   .sidebar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    bottom: 0;
+    width: 220px;
     height: 100dvh;
-    padding: 14px 8px;
+    padding: 14px 12px;
     gap: 22px;
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: 100;
-    transition: width 0.2s ease;
+    z-index: 1000;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform 0.2s ease, visibility 0.2s ease;
   }
+
+  .sidebar.expanded {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: 8px 0 24px #0005;
+  }
+
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 14px 10px;
+  }
+}
 
   .sidebar-toggle {
     display: block;
@@ -554,15 +572,9 @@ border-top: 1px solid var(--border);
     font-size: 17px;
   }
 
-  .sidebar.expanded {
-    width: 220px;
-    padding: 14px 12px;
-    box-shadow: 8px 0 24px #0005;
-  }
 
-  .layout:has(.sidebar.expanded) {
-    grid-template-columns: 220px minmax(0, 1fr);
-  }
+
+
 
   .sidebar.expanded .brand {
     justify-content: flex-start;
