@@ -209,7 +209,20 @@ margin-bottom: 22px;
 .breadcrumb strong {
 color: var(--text);
 }
+.breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.profile-picture {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
     .top-link {
       color: var(--cyan);
       border: 1px solid #28506a;
@@ -785,7 +798,10 @@ border-top: 1px solid var(--border);
     </aside>
 
     <main>
-        <div class="breadcrumb">Portfolio / <strong>Overview</strong></div>
+       <div class="breadcrumb">
+  <span>Portfolio / <strong>Overview</strong></span>
+  <img src="profile1.png" alt="Profile picture" class="profile-picture">
+</div>
         
 
       <section class="hero">
