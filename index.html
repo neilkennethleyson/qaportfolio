@@ -750,6 +750,27 @@ border-top: 1px solid var(--border);
     display: none;
   }
 }   
+
+
+/* Keep sidebar dropdowns closed unless explicitly expanded */
+#viewWorkSubmenu[hidden],
+#certificatesSubmenu[hidden] {
+  display: none !important;
+}
+
+#viewWorkSubmenu:not([hidden]),
+#certificatesSubmenu:not([hidden]) {
+  display: grid;
+}
+
+@media (max-width: 720px) {
+  .sidebar:not(.expanded) #viewWorkSubmenu,
+  .sidebar:not(.expanded) #certificatesSubmenu {
+    display: none !important;
+  }
+}
+
+    
   </style>
 
 
@@ -1531,6 +1552,9 @@ border-top: 1px solid var(--border);
   const viewWorkToggle = document.getElementById("viewWorkToggle");
   const viewWorkSubmenu = document.getElementById("viewWorkSubmenu");
 
+  viewWorkToggle.setAttribute("aria-expanded", "false");
+  viewWorkSubmenu.hidden = true;
+  
   viewWorkToggle.addEventListener("click", () => {
     const isExpanded =
       viewWorkToggle.getAttribute("aria-expanded") === "true";
@@ -1544,6 +1568,9 @@ border-top: 1px solid var(--border);
   const certificatesToggle = document.getElementById("certificatesToggle");
   const certificatesSubmenu = document.getElementById("certificatesSubmenu");
 
+ certificatesToggle.setAttribute("aria-expanded", "false");
+  certificatesSubmenu.hidden = true;
+    
   certificatesToggle.addEventListener("click", () => {
     const isExpanded =
       certificatesToggle.getAttribute("aria-expanded") === "true";
