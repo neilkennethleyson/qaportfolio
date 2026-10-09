@@ -764,6 +764,12 @@ transition: left 0.2s ease;
   display: grid;
 }
 
+#sixSigmaYellowBeltView[hidden],
+#sixSigmaGreenBeltView[hidden],
+#promptEngineeringView[hidden] {
+  display: none !important;
+}
+    
 @media (max-width: 720px) {
   .sidebar:not(.expanded) #viewWorkSubmenu,
   .sidebar:not(.expanded) #certificatesSubmenu {
@@ -927,10 +933,17 @@ transition: left 0.2s ease;
   aria-label="Certificates"
   hidden
 >
-  <a href="YOUR-CERTIFICATE-LINK-1" target="_blank" rel="noopener noreferrer">Six Sigma Yellow Belt</a>
-  <a href="YOUR-CERTIFICATE-LINK-2" target="_blank" rel="noopener noreferrer">Six Sigma Green Belt</a>
-  <a href="YOUR-CERTIFICATE-LINK-3" target="_blank" rel="noopener noreferrer">Prompt Engineering</a>
+  <a href="#six-sigma-yellow-belt" id="certYellowBeltLink">
+    Six Sigma Yellow Belt
+  </a>
+  <a href="#six-sigma-green-belt" id="certGreenBeltLink">
+    Six Sigma Green Belt
+  </a>
+  <a href="#prompt-engineering" id="promptEngineeringLink">
+    Prompt Engineering
+  </a>
 </nav>
+  
 </div>
 
       <div>
@@ -2461,6 +2474,101 @@ test('user can sign in successfully', async ({ page }) => {
     </div>
   </section>
 </div>
+
+
+
+
+<!-- SIX SIGMA YELLOW BELT -->
+<div id="sixSigmaYellowBeltView" hidden>
+  <div class="breadcrumb">
+    <span>
+      Portfolio / Certifications /
+      <strong>Six Sigma Yellow Belt</strong>
+    </span>
+  </div>
+
+  <section class="test-section">
+    <h1>Six Sigma Yellow Belt</h1>
+    <p style="color:var(--muted);line-height:1.8;">
+      This certification represents foundational knowledge of Six Sigma
+      principles and process improvement. It supports a structured approach
+      to identifying problems, understanding process variation, and
+      contributing to quality improvement initiatives.
+    </p>
+
+    <div class="info-panel" style="margin-top:20px;">
+      <img
+          src="assets/images/yellowbelt.png"
+  alt="Six Sigma Yellow Belt Certificate"
+
+        loading="lazy"
+        style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);"
+      >
+    </div>
+  </section>
+</div>
+
+
+<!-- SIX SIGMA GREEN BELT -->
+<div id="sixSigmaGreenBeltView" hidden>
+  <div class="breadcrumb">
+    <span>
+      Portfolio / Certifications /
+      <strong>Six Sigma Green Belt</strong>
+    </span>
+  </div>
+
+  <section class="test-section">
+    <h1>Six Sigma Green Belt</h1>
+    <p style="color:var(--muted);line-height:1.8;">
+      This certification represents knowledge of structured process
+      improvement and data-informed problem solving. These principles
+      can support root cause analysis, measurement, and the evaluation
+      of opportunities to improve quality and efficiency.
+    </p>
+
+    <div class="info-panel" style="margin-top:20px;">
+      <img
+        src="assets/images/greenbelt.png"
+        alt="Six Sigma Green Belt certificate"
+  
+        loading="lazy"
+        style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);"
+      >
+    </div>
+  </section>
+</div>
+
+
+<!-- PROMPT ENGINEERING -->
+<div id="promptEngineeringView" hidden>
+  <div class="breadcrumb">
+    <span>
+      Portfolio / Certifications /
+      <strong>Prompt Engineering</strong>
+    </span>
+  </div>
+
+  <section class="test-section">
+    <h1>Prompt Engineering</h1>
+    <p style="color:var(--muted);line-height:1.8;">
+      This certification relates to designing and refining prompts to guide
+      AI systems toward useful, relevant outputs. These skills can support
+      AI-assisted analysis, content preparation, and workflow improvement,
+      with human review used to validate results.
+    </p>
+
+    <div class="info-panel" style="margin-top:20px;">
+      <img
+       src="assets/images/prompt.png"
+  alt="Prompt Engineering Certificate"
+        loading="lazy"
+        style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--border);"
+      >
+    </div>
+  </section>
+</div>
+
       
     </main>
   </div>
@@ -2583,6 +2691,24 @@ const aiQaAssistantLink =
 const releaseQualityReportLink =
   document.getElementById("releaseQualityReportLink");
 
+const sixSigmaYellowBeltView =
+  document.getElementById("sixSigmaYellowBeltView");
+
+const sixSigmaGreenBeltView =
+  document.getElementById("sixSigmaGreenBeltView");
+
+const promptEngineeringView =
+  document.getElementById("promptEngineeringView");
+
+const certYellowBeltLink =
+  document.getElementById("certYellowBeltLink");
+
+const certGreenBeltLink =
+  document.getElementById("certGreenBeltLink");
+
+const promptEngineeringLink =
+  document.getElementById("promptEngineeringLink");
+  
   const testDesignLink = document.getElementById("testDesignLink");
   const defectInvestigationLink =
     document.getElementById("defectInvestigationLink");
@@ -2596,6 +2722,9 @@ function showPortfolioPage(page) {
   playwrightAutomationView.hidden = page !== "playwright-automation";
   aiQaAssistantView.hidden = page !== "ai-qa-assistant";
   releaseQualityReportView.hidden = page !== "release-quality-report";
+   sixSigmaYellowBeltView.hidden = page !== "six-sigma-yellow-belt";
+  sixSigmaGreenBeltView.hidden = page !== "six-sigma-green-belt";
+  promptEngineeringView.hidden = page !== "prompt-engineering";
 
   history.replaceState(
     null,
@@ -2637,6 +2766,23 @@ releaseQualityReportLink.addEventListener("click", function (event) {
   event.preventDefault();
   showPortfolioPage("release-quality-report");
 });
+
+certYellowBeltLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  showPortfolioPage("six-sigma-yellow-belt");
+});
+
+certGreenBeltLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  showPortfolioPage("six-sigma-green-belt");
+});
+
+promptEngineeringLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  showPortfolioPage("prompt-engineering");
+});
+
+
   
   document.querySelectorAll('a[href="#overview"], a[data-show-overview]')
     .forEach(function (link) {
@@ -2646,7 +2792,8 @@ releaseQualityReportLink.addEventListener("click", function (event) {
       });
     });
 
-  const initialPage = location.hash.slice(1);
+
+const initialPage = location.hash.slice(1);
 
 if (
   initialPage === "test-design" ||
@@ -2654,7 +2801,10 @@ if (
   initialPage === "uat-user-journey" ||
   initialPage === "playwright-automation" ||
   initialPage === "ai-qa-assistant" ||
-  initialPage === "release-quality-report"
+  initialPage === "release-quality-report" ||
+  initialPage === "six-sigma-yellow-belt" ||
+  initialPage === "six-sigma-green-belt" ||
+  initialPage === "prompt-engineering"
 ) {
   showPortfolioPage(initialPage);
 } else {
