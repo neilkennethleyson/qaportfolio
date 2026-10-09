@@ -793,6 +793,30 @@ border-top: 1px solid var(--border);
     <a href="https://neilkennethleyson.github.io/ai-qa-assistant.html">AI QA Assistant</a>
     <a href="https://neilkennethleyson.github.io/release-quality-report.html">Release Quality Report</a>
   </nav>
+  
+<button
+  class="nav-group-toggle"
+  id="certificatesToggle"
+  aria-expanded="false"
+  aria-controls="certificatesSubmenu"
+>
+  <span>
+    <span class="nav-icon">♧</span>
+    <span class="nav-text">View Certificates</span>
+  </span>
+  <span class="nav-chevron">›</span>
+</button>
+
+<nav
+  id="certificatesSubmenu"
+  class="submenu"
+  aria-label="Certificates"
+  hidden
+>
+  <a href="YOUR-CERTIFICATE-LINK-1" target="_blank" rel="noopener noreferrer">Six Sigma Yellow Belt</a>
+  <a href="YOUR-CERTIFICATE-LINK-2" target="_blank" rel="noopener noreferrer">Six Sigma Green Belt</a>
+  <a href="YOUR-CERTIFICATE-LINK-3" target="_blank" rel="noopener noreferrer">Prompt Engineering</a>
+</nav>
 </div>
 
       <div>
@@ -838,7 +862,7 @@ border-top: 1px solid var(--border);
             <div class="metric-label">Years across QA, UAT & product roles</div>
           </div>
           <div class="metric">
-            <div class="metric-value">C1</div>
+            <div class="metric-value">65-C1</div>
             <div class="metric-label">English Proficiency</div>
           </div>
           <div class="metric">
@@ -978,5 +1002,17 @@ border-top: 1px solid var(--border);
   });
 </script>
   
+  <script>
+  const certificatesToggle = document.getElementById("certificatesToggle");
+  const certificatesSubmenu = document.getElementById("certificatesSubmenu");
+
+  certificatesToggle.addEventListener("click", () => {
+    const isExpanded =
+      certificatesToggle.getAttribute("aria-expanded") === "true";
+
+    certificatesToggle.setAttribute("aria-expanded", String(!isExpanded));
+    certificatesSubmenu.hidden = isExpanded;
+  });
+</script>
 </body>
 </html>
