@@ -1062,19 +1062,21 @@ transition: left 0.2s ease;
   </span>
 </button>
 
+  <button
+  class="nav-group-toggle"
+  id="contactMeLink"
+  type="button"
+  onclick="showPortfolioPage('contact')"
+>
+  <span>
+    <span class="nav-icon">✉</span>
+    <span class="nav-text">Contact Me</span>
+  </span>
+</button>
 
 
   
 </div>
-
-      <div>
-        <div class="nav-label">PROFILE</div>
-        <nav aria-label="Profile links">
-          <a href="#about">▧ &nbsp; About Me</a>
-          <a href="#skills">◇ &nbsp; Skills & Tools</a>
-          <a href="#contact">↗ &nbsp; Contact</a>
-        </nav>
-      </div>
 
       <div class="sidebar-bottom">
         <div class="available"><span class="dot"></span> OPEN TO OPPORTUNITIES</div>
@@ -2738,11 +2740,11 @@ test('user can sign in successfully', async ({ page }) => {
 
 
       <div id="resumeView" hidden>
-  <div class="breadcrumb">
-    <a href="#overview" data-show-overview>Portfolio</a>
-    <span>/</span>
-    <span>Resume</span>
-  </div>
+ <div class="breadcrumb">
+  <span>
+    Portfolio / <strong>Resume</strong>
+  </span>
+</div>
 
   <section class="content-section">
     <h1>My Resume</h1>
@@ -2785,11 +2787,11 @@ test('user can sign in successfully', async ({ page }) => {
 
       
 <div id="workExperienceView" hidden>
-  <div class="breadcrumb">
-    <a href="#overview" data-show-overview>Portfolio</a>
-    <span>/</span>
-    <span>Work Experiences</span>
-  </div>
+<div class="breadcrumb">
+  <span>
+    Portfolio / <strong>Work Experiences</strong>
+  </span>
+</div>
 
   <section class="content-section">
     <h1>Work Experiences</h1>
@@ -2853,6 +2855,61 @@ test('user can sign in successfully', async ({ page }) => {
   </section>
 </div>
 
+
+
+      <!-- CONTACT VIEW -->
+<div id="contactView" hidden>
+
+    <div class="breadcrumb">
+        <span>Portfolio / <strong>Contact Me</strong></span>
+    </div>
+
+    <div class="contact-box">
+
+        <p class="section-label">
+            Let’s Start a Conversation
+        </p>
+
+        <h2>
+            I'm open to new opportunities!
+        </h2>
+
+        <p>
+            I’m interested in remote/virtual opportunities where QA, software testing, UAT, quality evaluation, customer service, product support, product management, automation, and AI-assisted workflows can add value.
+        </p>
+
+        <div class="contact-icons">
+
+            <a href="mailto:neilkennethleyson@gmail.com" title="Email me">
+                <img src="https://cdn.simpleicons.org/gmail" alt="Gmail">
+            </a>
+
+            <a href="https://wa.me/639612280737"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="WhatsApp">
+                <img src="https://cdn.simpleicons.org/whatsapp" alt="WhatsApp">
+            </a>
+
+            <a href="https://www.linkedin.com/in/neil-kenneth-leyson-53a48a3b7/"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="LinkedIn">
+                <img src="assets/images/linkedin.png" alt="LinkedIn">
+            </a>
+
+            <a href="https://www.upwork.com/freelancers/~01d9d1212f9a629db7"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="Upwork">
+                <img src="https://cdn.simpleicons.org/upwork" alt="Upwork">
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
 
       
       
@@ -3009,6 +3066,8 @@ const resumeView = document.getElementById("resumeView");
 const workExperienceView =
   document.getElementById("workExperienceView");
 
+  const contactView =
+  document.getElementById("contactView");
   
 function showPortfolioPage(page) {
   overviewView.hidden = page !== "overview";
@@ -3024,6 +3083,7 @@ function showPortfolioPage(page) {
 englishCertificationView.hidden = page !== "english-certification";
 resumeView.hidden = page !== "resume";
 workExperienceView.hidden = page !== "work-experience";
+ contactView.hidden = page !== "contact";
   
   history.replaceState(
     null,
@@ -3109,7 +3169,9 @@ if (
   initialPage === "six-sigma-green-belt" ||
   initialPage === "prompt-engineering" ||
 initialPage === "english-certification" ||
-  initialPage === "resume"
+  initialPage === "resume" ||
+   initialPage === "work-experience" ||
+  initialPage === "contact"
 
   
 ) {
